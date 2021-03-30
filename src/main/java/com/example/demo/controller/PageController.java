@@ -28,7 +28,7 @@ public class PageController {
         var val = contactService.findById(id);
         if( val.isPresent() ) {
             Contact contact = (Contact) val.get();
-            model.addAttribute("email", contact.getEmail());
+            model.addAttribute("model", contact);
         }
         else
         {
