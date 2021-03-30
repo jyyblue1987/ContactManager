@@ -4,7 +4,7 @@ CREATE TABLE contacts (
     id INT AUTO_INCREMENT  PRIMARY KEY,
     email VARCHAR(60) NOT NULL,
     full_name VARCHAR(250) NOT NULL,
-    type ENUM('Staff','Customer') DEFAULT 'Staff',
+    type VARCHAR(20) NOT NULL,
     phone_number VARCHAR(40),
     address VARCHAR(100)
 );

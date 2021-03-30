@@ -12,8 +12,7 @@ public class Contact {
 
     private String email;
     private String full_name;
-    @Enumerated(EnumType.STRING)
-    private Type type;
+    private String type;
     private String phone_number;
     private String address;
 
@@ -21,7 +20,7 @@ public class Contact {
 
     }
 
-    public Contact(String email, String full_name, Type type, String phone_number, String address ) {
+    public Contact(String email, String full_name, String type, String phone_number, String address ) {
         this.email = email;
         this.full_name = full_name;
         this.type = type;
@@ -53,11 +52,11 @@ public class Contact {
         this.full_name = full_name;
     }
 
-    public Type getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setType(String type) {
         this.type = type;
     }
 

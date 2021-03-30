@@ -13,8 +13,8 @@ import java.util.List;
 
 @Controller
 public class PageController {
-//    @Autowired
-//    IContactService contactService;
+    @Autowired
+    IContactService contactService;
 
     @GetMapping("/")
     public String index() {
@@ -22,10 +22,18 @@ public class PageController {
     }
 
     @GetMapping("/detail")
-    public String detail(@RequestParam(name="id", required=false, defaultValue="10") int id, Model model) {
+    public String detail(@RequestParam(name="id", required=false, defaultValue="10") Long id, Model model) {
 //        var contacts = (List<Contact>) contactService.findById(id);
 //        model.addAttribute("id", contacts.get(0).getFull_name());
-        model.addAttribute("id", id);
+        var val = contactService.findById(id);
+        if( val.isPresent() ) {
+            Contact contact = (Contact) val.get();
+            model.addAttribute("email", contact.getEmail());
+        }
+        else
+        {
+            model.addAttribute("email", 0);
+        }
 
         return "detail";
     }
