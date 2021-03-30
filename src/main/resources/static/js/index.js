@@ -16,12 +16,10 @@ function loadContactList() {
             {
                 var row = data[i];
                 tbody += '<tr>' +
-                            '<td>' + row['id'] + '</td>' +
-                            '<td>' + row['email'] + '</td>' +
+                            '<td>' + (i + 1) + '</td>' +
                             '<td>' + row['full_name'] + '</td>' +
                             '<td>' + row['type'] + '</td>' +
-                            '<td>' + row['phone_number'] + '</td>' +
-                            '<td>' + row['address'] + '</td>' +
+                            '<td><a href="/detail?id=' + row['id'] + '">Detail</a></td>' +
                         '</tr>'
             }
 
